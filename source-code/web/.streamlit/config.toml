@@ -1,0 +1,14 @@
+[theme]
+# Màu nhấn của nút, tab, thanh trượt... (hồng mỹ phẩm)
+primaryColor = "#D6336C"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#FFF1F6"
+textColor = "#2D1B33"
+font = "sans serif"
+
+[client]
+# Chỉ giữ nút menu nhỏ ở góc phải, bỏ nút Deploy để chừa chỗ cho tên người dùng
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false

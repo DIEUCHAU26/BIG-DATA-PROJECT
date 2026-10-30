@@ -1,0 +1,10 @@
+venv/
+__pycache__/
+.streamlit/secrets.toml
+*.restore
+backups/
+.streamlit/initial_accounts.json
+.streamlit/initial_accounts.tmp
+
+app.db
+.github_upload/
