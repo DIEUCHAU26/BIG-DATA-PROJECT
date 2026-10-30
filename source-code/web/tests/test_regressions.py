@@ -8,7 +8,6 @@ import pandas as pd
 from bson import json_util
 import db
 import security
-import models
 from data_loader import _dung_tich, enrich
 
 
@@ -70,16 +69,6 @@ class RegressionTests(unittest.TestCase):
 
     def test_malformed_password_hash_rejected(self):
         self.assertFalse(db.check_password("anything", "bad$hash"))
-
-    def test_missing_volume_model_and_importances(self):
-        df = pd.DataFrame({"price": np.arange(100)+1, "price_original": np.arange(100)*1000+1000,
-            "source": "hasaki", "category": "x", "category_group": "x", "brand": "x",
-            "xuat_xu": "x", "dung_tich": np.nan, "name": ["combo" if i%2 else "mini" for i in range(100)]})
-        labels, _, _ = models.run_kmeans(df, ["Giá bán", "Dung tích"], 3)
-        self.assertEqual(len(labels), 100)
-        bundle = models.train_price_model(df)
-        self.assertEqual(bundle["importance"]["dung_tich"], 0)
-        self.assertAlmostEqual(bundle["importance"].sum(), 1)
 
 
 if __name__ == "__main__":

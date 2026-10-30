@@ -25,6 +25,10 @@ MONGO_PRODUCTS_COLLECTION = "product_clean"
 - `migrate_to_mongo.py` mặc định chỉ kiểm tra. `--apply` chỉ cho nhập vào database đích trống; không ghi đè dữ liệu đang dùng. `reload_data.py` hướng dẫn chuyển sang luồng quản trị có xác thực.
 - `repair_volumes.py` chỉ đối chiếu URL và nguồn với Excel. `--apply` lưu bản sao rồi khôi phục đơn vị trong giao dịch; không đoán đơn vị cho dữ liệu không khớp.
 
+## Mô hình học máy
+
+Các trang trong nhóm **Mô hình** (phân khúc thương hiệu, dự đoán giá, dự đoán hết hàng, phát hiện bất thường) nằm trong `ml_pages.py`. Chúng đọc mô hình và biểu đồ ở `../ml/` và bảng kết quả ở `../../dataset/ml/`, nên giữ nguyên cấu trúc thư mục của repo. Xem `../ml/README.md` để huấn luyện lại.
+
 ## Kiểm thử
 
 ```powershell
