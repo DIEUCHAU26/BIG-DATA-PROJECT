@@ -5,7 +5,7 @@ Chạy `run_web.bat`. Cấu hình riêng nằm trong `.streamlit/secrets.toml`:
 ```toml
 MONGO_URI = "<connection string>"
 MONGO_DB = "DATA"
-MONGO_PRODUCTS_COLLECTION = "products_clean"
+MONGO_PRODUCTS_COLLECTION = "product_clean"
 ```
 
 ## Dữ liệu và tài khoản
