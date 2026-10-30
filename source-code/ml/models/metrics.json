@@ -1,0 +1,288 @@
+{
+  "dinh_gia": {
+    "mo_hinh_chon": "RandomForest",
+    "so_mau": 8152,
+    "cac_mo_hinh": {
+      "Ridge": {
+        "cv_r2": 0.765,
+        "train_r2": 0.803,
+        "test_r2": 0.771,
+        "mae": 119087,
+        "sai_lech_trung_vi_pct": 23.8
+      },
+      "GradientBoosting": {
+        "cv_r2": 0.829,
+        "train_r2": 0.886,
+        "test_r2": 0.842,
+        "mae": 100258,
+        "sai_lech_trung_vi_pct": 19.7
+      },
+      "RandomForest": {
+        "cv_r2": 0.839,
+        "train_r2": 0.921,
+        "test_r2": 0.863,
+        "mae": 90849,
+        "sai_lech_trung_vi_pct": 14.6
+      }
+    },
+    "so_gia_bat_thuong": 154,
+    "nguong_z": 3,
+    "feature_importance": {
+      "brand_te": 0.8762,
+      "loai_sp": 0.3285,
+      "is_combo": 0.2159,
+      "log_vol": 0.1716,
+      "log_sl": 0.0744,
+      "brand_top": 0.0456,
+      "is_mini": 0.0219,
+      "unit": 0.0195,
+      "category_group": 0.0176,
+      "origin": 0.0152,
+      "category": 0.0106,
+      "source": 0.0006,
+      "vol_missing": 0.0004
+    },
+    "learning_curve": [
+      {
+        "so_mau": 652,
+        "train_r2": 0.855,
+        "cv_r2": 0.629
+      },
+      {
+        "so_mau": 1304,
+        "train_r2": 0.886,
+        "cv_r2": 0.733
+      },
+      {
+        "so_mau": 2282,
+        "train_r2": 0.904,
+        "cv_r2": 0.781
+      },
+      {
+        "so_mau": 3260,
+        "train_r2": 0.912,
+        "cv_r2": 0.812
+      },
+      {
+        "so_mau": 4564,
+        "train_r2": 0.915,
+        "cv_r2": 0.835
+      },
+      {
+        "so_mau": 5542,
+        "train_r2": 0.919,
+        "cv_r2": 0.847
+      },
+      {
+        "so_mau": 6521,
+        "train_r2": 0.923,
+        "cv_r2": 0.858
+      }
+    ]
+  },
+  "het_hang": {
+    "mo_hinh_chon": "RandomForest",
+    "so_mau": 5263,
+    "cac_mo_hinh": {
+      "LogisticRegression": {
+        "cv_auc": 0.786,
+        "test_auc": 0.781
+      },
+      "GradientBoosting": {
+        "cv_auc": 0.808,
+        "test_auc": 0.817
+      },
+      "RandomForest": {
+        "cv_auc": 0.813,
+        "test_auc": 0.821
+      }
+    },
+    "cv_auc_neu_gom_hang_can_han": 0.917,
+    "ty_le_het_hang_can_han": 0.905,
+    "nguong": 0.376,
+    "test_tai_nguong": {
+      "precision": 0.241,
+      "recall": 0.724,
+      "f1": 0.361
+    },
+    "ma_tran_nham_lan": {
+      "nhan": [
+        "Còn hàng",
+        "Hết hàng"
+      ],
+      "gia_tri": [
+        [
+          636,
+          290
+        ],
+        [
+          35,
+          92
+        ]
+      ]
+    },
+    "feature_importance": {
+      "brand_te": 0.1012,
+      "brand_top": 0.0324,
+      "discount_pct": 0.0198,
+      "log_reviews": 0.0185,
+      "category_group": 0.0163,
+      "unit": 0.0162,
+      "log_vol": 0.0161,
+      "origin": 0.0132,
+      "log_price_original": 0.0106,
+      "is_mini": 0.0092,
+      "is_combo": 0.0014
+    }
+  },
+  "bat_thuong": {
+    "so_mau": 5172,
+    "dac_trung": [
+      "log_ppu",
+      "discount_pct",
+      "log_reviews",
+      "lech"
+    ],
+    "contamination": 0.02,
+    "so_gan_co": {
+      "iqr": 160,
+      "iso": 104,
+      "lof": 104,
+      "tu_2_phuong_phap": 68,
+      "ca_3": 12
+    }
+  },
+  "phan_cum": {
+    "hasaki": {
+      "so_thuong_hieu": 213,
+      "k": 4,
+      "dac_trung": [
+        "log_so_sp",
+        "log_gia",
+        "giam_gia",
+        "het_hang",
+        "log_danh_gia",
+        "combo"
+      ],
+      "silhouette_kmeans": 0.179,
+      "silhouette_hierarchical": 0.162,
+      "ari_kmeans_hierarchical": 0.415,
+      "dbscan_nhieu": 66,
+      "cum": {
+        "Nhiều sản phẩm, nhiều combo": 69,
+        "Giảm giá sâu, giá cao": 67,
+        "Ít giảm giá, giá rẻ": 61,
+        "Hay hết hàng, ít sản phẩm": 16
+      },
+      "chon_k": [
+        {
+          "k": 2,
+          "inertia": 1061.08,
+          "silhouette": 0.171,
+          "davies_bouldin": 2.039
+        },
+        {
+          "k": 3,
+          "inertia": 923.205,
+          "silhouette": 0.17,
+          "davies_bouldin": 1.867
+        },
+        {
+          "k": 4,
+          "inertia": 795.567,
+          "silhouette": 0.179,
+          "davies_bouldin": 1.56
+        },
+        {
+          "k": 5,
+          "inertia": 719.07,
+          "silhouette": 0.173,
+          "davies_bouldin": 1.565
+        },
+        {
+          "k": 6,
+          "inertia": 655.478,
+          "silhouette": 0.182,
+          "davies_bouldin": 1.471
+        },
+        {
+          "k": 7,
+          "inertia": 599.477,
+          "silhouette": 0.185,
+          "davies_bouldin": 1.398
+        },
+        {
+          "k": 8,
+          "inertia": 563.086,
+          "silhouette": 0.188,
+          "davies_bouldin": 1.385
+        }
+      ]
+    },
+    "cocolux": {
+      "so_thuong_hieu": 132,
+      "k": 4,
+      "dac_trung": [
+        "log_so_sp",
+        "log_gia",
+        "giam_gia",
+        "log_danh_gia",
+        "combo"
+      ],
+      "silhouette_kmeans": 0.299,
+      "silhouette_hierarchical": 0.27,
+      "ari_kmeans_hierarchical": 0.661,
+      "dbscan_nhieu": 16,
+      "cum": {
+        "Ít giảm giá, ít sản phẩm": 57,
+        "Nhiều đánh giá, nhiều sản phẩm": 36,
+        "Giảm giá sâu, giá cao": 34,
+        "Nhiều combo, nhiều sản phẩm": 5
+      },
+      "chon_k": [
+        {
+          "k": 2,
+          "inertia": 529.039,
+          "silhouette": 0.23,
+          "davies_bouldin": 1.705
+        },
+        {
+          "k": 3,
+          "inertia": 409.859,
+          "silhouette": 0.264,
+          "davies_bouldin": 1.204
+        },
+        {
+          "k": 4,
+          "inertia": 309.275,
+          "silhouette": 0.299,
+          "davies_bouldin": 1.092
+        },
+        {
+          "k": 5,
+          "inertia": 267.491,
+          "silhouette": 0.283,
+          "davies_bouldin": 1.108
+        },
+        {
+          "k": 6,
+          "inertia": 235.908,
+          "silhouette": 0.281,
+          "davies_bouldin": 1.076
+        },
+        {
+          "k": 7,
+          "inertia": 219.524,
+          "silhouette": 0.279,
+          "davies_bouldin": 1.124
+        },
+        {
+          "k": 8,
+          "inertia": 195.68,
+          "silhouette": 0.283,
+          "davies_bouldin": 1.103
+        }
+      ]
+    }
+  }
+}
