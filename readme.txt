@@ -1,4 +1,4 @@
-﻿----- PHÂN TÍCH DỮ LIỆU LỚN TRONG KINH DOANH ---------------------
+﻿----- PHÂN TÍCH DỮ LIỆU LỚN TRONG KINH DOANH -----
 STT: 05
 Tên đề tài: XÂY DỰNG HỆ THỐNG THU THẬP, LƯU TRỮ VÀ PHÂN TÍCH DỮ LIỆU SẢN PHẨM MỸ PHẨM VÀ CHĂM SÓC CÁ NHÂN TỪ HASAKI VÀ COCOLUX
 Lớp học phần: ABDA433708_03

@@ -1,7 +1,6 @@
 import pandas as pd, numpy as np
 from quy_tac import DATASET
 
-# products_clean.xlsx đã chuẩn hóa sẵn: brand viết hoa thống nhất, kg đã đổi sang g, giá hợp lệ
 df = pd.read_excel(DATASET + "products_clean.xlsx")
 df = df.drop_duplicates(subset=["source", "name"])      # bỏ tên trùng (còn 12 dòng)
 
