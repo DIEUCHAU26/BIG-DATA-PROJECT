@@ -1,12 +1,12 @@
-﻿----- Thong tin de tai ---------------------
-STT: ...
-Ten de tai: ...
-Lop hoc phan: ABDA433708_xx
-Nam hoc: HKx/20xx-20xx
+﻿----- PHÂN TÍCH DỮ LIỆU LỚN TRONG KINH DOANH ---------------------
+STT: 05
+Tên đề tài: XÂY DỰNG HỆ THỐNG THU THẬP, LƯU TRỮ VÀ PHÂN TÍCH DỮ LIỆU SẢN PHẨM MỸ PHẨM VÀ CHĂM SÓC CÁ NHÂN TỪ HASAKI VÀ COCOLUX
+Lớp học phần: ABDA433708_03
+Năm học: HK1/2026-2027
 --------------------------------------------
-Thong tin nhom
-1. Ho ten truong nhom (MSSV) - SDT - Email ca nhan
-2. Ho ten sinh vien 2 (MSSV)
-3. Ho ten sinh vien 3 (MSSV)
-4. Ho ten sinh vien 4 (MSSV)
-5. Ho ten sinh vien 5 (MSSV)
+Thông tin nhóm
+1. Hoàng Thị Diệu Châu  (24126022) - 0326837327 - htdieuchau25@gmail.com
+2. Mai Ngọc Châu        (24126023)
+3. Lê Thị Hồng Diệu     (24126031)
+4. Trần Thị Thanh Diệu  (24126032)
+5. Ngô Thị Sương        (24126159)
