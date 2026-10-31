@@ -1,11 +1,12 @@
 import base64
 import io
+import logging
 from pathlib import Path
 
 import numpy as np
 import pandas as pd
 import streamlit as st
-from pymongo.errors import PyMongoError
+from pymongo.errors import ConfigurationError, InvalidURI, OperationFailure, PyMongoError, ServerSelectionTimeoutError
 
 import db
 from admin_pages import ROLE_NAMES, page_backup, page_crud, page_users
@@ -360,7 +361,12 @@ def navbar(user, menu):
 
 def main():
     st.session_state.pop("_data_snapshot", None)
-    db.init_db()
+    startup = st.empty()
+    startup.info("Đang kết nối và khởi tạo dữ liệu…")
+    try:
+        db.init_db()
+    finally:
+        startup.empty()
     apply_style()
 
     from security import current_user
@@ -379,9 +385,32 @@ def main():
     trang.run()  # chạy trang đang được chọn
 
 
+def show_database_error(exc):
+    cause = exc.__cause__ or exc
+    # Do not log exception text: driver messages can contain connection details.
+    code = getattr(cause, "code", None)
+    logging.getLogger(__name__).error("Database request failed: type=%s code=%s", type(cause).__name__, code)
+    if isinstance(cause, InvalidURI):
+        message = "MONGO_URI không hợp lệ. Kiểm tra chuỗi kết nối và mã hóa URL các ký tự đặc biệt trong mật khẩu."
+    elif isinstance(cause, OperationFailure) and code == 18:
+        message = "MongoDB từ chối đăng nhập. Kiểm tra username và password trong Database Access của Atlas và cập nhật MONGO_URI."
+    elif isinstance(cause, OperationFailure) and code == 13:
+        message = "Tài khoản MongoDB chưa đủ quyền. Kiểm tra quyền readWrite trên database được đặt trong MONGO_DB."
+    elif isinstance(cause, ServerSelectionTimeoutError):
+        message = "Không tìm được máy chủ MongoDB trong thời gian chờ. Kiểm tra Network Access cho máy chủ Streamlit, trạng thái cluster và hostname trong MONGO_URI."
+    elif isinstance(cause, ConfigurationError):
+        message = "Cấu hình MongoDB hoặc DNS không hợp lệ. Kiểm tra hostname trong MONGO_URI và cấu hình kết nối Atlas."
+    else:
+        message = "Không thể hoàn tất thao tác với MongoDB. Kiểm tra cấu hình Atlas và tải lại trang trước khi thử lại."
+    st.error(message)
+    st.caption(f"Mã chẩn đoán: {type(cause).__name__}" + (f" · {code}" if code is not None else ""))
+
+
 try:
     main()
-except (ConnectionError, PermissionError, ValueError, db.DuplicateError) as exc:
+except ConnectionError as exc:
+    show_database_error(exc)
+except (PermissionError, ValueError, db.DuplicateError) as exc:
     st.error(str(exc))
-except PyMongoError:
-    st.error("Không thể hoàn tất thao tác với MongoDB. Hãy tải lại dữ liệu để kiểm tra trạng thái trước khi thử lại.")
+except PyMongoError as exc:
+    show_database_error(exc)

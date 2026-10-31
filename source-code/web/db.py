@@ -2,6 +2,7 @@ import gzip
 import hashlib
 import hmac
 import json
+import logging
 import os
 import sqlite3
 import threading
@@ -314,9 +315,13 @@ def _initialize_db():
     global _inited
     if _inited:
         return
+    logger = logging.getLogger(__name__)
+    logger.warning("Database startup: connecting")
     store = get_store()
+    logger.warning("Database startup: initializing collections and indexes (%s)", store.name)
     store.init()
     from security import initialize_accounts
+    logger.warning("Database startup: initializing accounts")
     initialize_accounts(store)
     # Atlas is authoritative: an empty collection must stay empty after deletion.
     # Excel is imported automatically only for the standalone SQLite demo.
@@ -325,6 +330,7 @@ def _initialize_db():
         if records:
             store.insert_many("products", records)
     _inited = True
+    logger.warning("Database startup: ready")
 
 
 # ----------------------------- NGƯỜI DÙNG -----------------------------
