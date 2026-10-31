@@ -16,6 +16,24 @@ MONGO_PRODUCTS_COLLECTION = "product_clean"
 - Tài khoản còn dùng mật khẩu demo được chuyển sang mật khẩu ngẫu nhiên trong `.streamlit/initial_accounts.json`. File này chỉ lưu trên máy và được Git bỏ qua. Không chia sẻ file. Có thể đổi mật khẩu trong menu tài khoản.
 - Tài khoản bị xóa, đổi mật khẩu hoặc hạ quyền được kiểm tra lại ở mỗi lượt tải và trước thao tác quản lý. Mật khẩu mới cần ít nhất 10 ký tự.
 
+## Tạo lại tài khoản quản trị
+
+Nếu mất quyền đăng nhập hoặc đã xóa tài khoản, chạy công cụ trên máy cá nhân:
+
+```powershell
+cd source-code/web
+python -m pip install pymongo
+python create_admin.py
+```
+
+Nhập URI Atlas đang dùng trong Streamlit Secrets, tên database (mặc định `DATA`),
+tên đăng nhập mới (mặc định `admin_moi`) và mật khẩu ít nhất 10 ký tự.
+URI và mật khẩu được nhập ẩn, không lưu vào file. Công cụ tạo tài khoản có quyền
+`admin` trực tiếp trên Atlas; không ghi đè tài khoản trùng tên và không xóa dữ liệu.
+Sau khi báo thành công, đăng nhập web bằng tên và mật khẩu vừa chọn. Tài khoản
+MongoDB trong URI cần quyền ghi trên database; IP máy chạy công cụ phải được Atlas
+cho phép kết nối. Việc push mã lên GitHub không tự tạo tài khoản này.
+
 ## Sao lưu và thay thế dữ liệu
 
 - Bấm **Chuẩn bị bản sao lưu**, rồi tải `.json.gz`. Bản sao dùng BSON Extended JSON để giữ kiểu ngày giờ.
