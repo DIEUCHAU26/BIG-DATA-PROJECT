@@ -13,3 +13,4 @@ Thông tin nhóm
 --------------------------------------------
 Link web: https://big-data-project-isjyfm8bvienlpbymbtsvf.streamlit.app/kham-pha
 Link MongoDB Compass: mongodb+srv://24126195_db_user:nhom5cuoiki@cluster0.4rjebel.mongodb.net/
+Link drive + video báo cáo: https://drive.google.com/drive/folders/1WhEDD-6SxcMX1gqm9qpfAgnhfHt80ny8?usp=sharing
