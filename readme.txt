@@ -12,4 +12,4 @@ Thông tin nhóm
 5. Ngô Thị Sương        (24126195)
 --------------------------------------------
 Link web: https://big-data-project-isjyfm8bvienlpbymbtsvf.streamlit.app/kham-pha
-Link MongoDB: mongodb+srv://24126195_db_user:nhom5cuoiki@cluster0.4rjebel.mongodb.net/
+Link MongoDB Compass: mongodb+srv://24126195_db_user:nhom5cuoiki@cluster0.4rjebel.mongodb.net/
