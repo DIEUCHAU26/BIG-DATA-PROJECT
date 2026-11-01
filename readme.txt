@@ -9,4 +9,4 @@ Thông tin nhóm
 2. Mai Ngọc Châu        (24126023)
 3. Lê Thị Hồng Diệu     (24126031)
 4. Trần Thị Thanh Diệu  (24126032)
-5. Ngô Thị Sương        (24126159)
+5. Ngô Thị Sương        (24126195)
