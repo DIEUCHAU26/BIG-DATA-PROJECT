@@ -10,3 +10,5 @@ Thông tin nhóm
 3. Lê Thị Hồng Diệu     (24126031)
 4. Trần Thị Thanh Diệu  (24126032)
 5. Ngô Thị Sương        (24126195)
+--------------------------------------------
+Link web: https://big-data-project-isjyfm8bvienlpbymbtsvf.streamlit.app/kham-pha
